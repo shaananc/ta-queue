@@ -1,4 +1,3 @@
-drop database ta_queue;
 create database ta_queue;
 
 use ta_queue;
