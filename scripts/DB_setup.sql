@@ -25,7 +25,7 @@ create table courses(
   access_code VARCHAR(16),
   enabled     BOOLEAN DEFAULT true NOT NULL,
   generic     BOOLEAN DEFAULT false NOT NULL,
-  primary key (course_id),
+  primary key (course_id)
 );
 
 --Students enrolled in course as student or TA;
