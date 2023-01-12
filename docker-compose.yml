@@ -3,10 +3,10 @@ services:
   db:
     image: mariadb
     environment:
-      MARIADB_ROOT_PASSWORD_HASH: '*164E0BBB78C10EAD634276CDCD1C4BEFB4996CE8' 
+      MARIADB_ROOT_PASSWORD: 'ghXr74@439-M' 
     volumes:
       - ./db_data:/var/lib/mysql
-      - ./scripts/DB_setup.sql:/docker-entrypoint-initdb.d/setup.sh
+      - ./scripts/DB_setup.sql:/docker-entrypoint-initdb.d/setup.sql
     networks:
       - ta_network
   web:
