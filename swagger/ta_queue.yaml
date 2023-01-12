@@ -10,10 +10,10 @@ info:
     name: "GPL 3"
     url: "https://www.gnu.org/licenses/gpl-3.0.en.html"
 
-host: "ta-queue.utah.edu"
+host: "localhost"
 basePath: "/api"
 schemes:
-- "https"
+- "http"
 
 # THESE TWO DECLARATIONS AT THE GLOBAL LEVEL ARE SUPPOSED
 # ELIMINATE THE NEED FOR THEM IN ALL THE POST PATHS. BUT

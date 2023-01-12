@@ -1,0 +1,35 @@
+version: '3'
+services:
+  db:
+    image: mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD_HASH: '*164E0BBB78C10EAD634276CDCD1C4BEFB4996CE8' 
+    volumes:
+      - ./db_data:/var/lib/mysql
+      - ./scripts/DB_setup.sql:/docker-entrypoint-initdb.d/setup.sh
+    networks:
+      - ta_network
+  web:
+    image: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - .:/var/www/html/:ro
+    networks:
+      - ta_network
+
+  php:    
+    image: php:7.0-fpm  
+    container_name: php-container  
+    expose:  
+      - 9000  
+    volumes:  
+      - .:/var/www/html/:ro   
+    networks:
+      - ta_network
+
+networks:
+  ta_network:
